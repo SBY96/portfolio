@@ -1,0 +1,201 @@
+:root {
+  --primary: #007bff;
+  --gray: #f4f4f4;
+  --dark: #333;
+  --light: #fff;
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+nav {
+  background: var(--light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permet au contenu de passer à la ligne si trop étroit */
+}
+
+nav h1 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  font-weight: bold;
+  color: var(--dark);
+  font-size: 1rem;
+}
+
+.hero {
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.section.gray {
+  background: var(--gray);
+}
+
+h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.card i {
+  font-size: 2em;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* --- MEDIA QUERIES POUR RESPONSIVE --- */
+
+/* Tablettes et petits ordinateurs */
+@media (max-width: 768px) {
+  nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  nav h1 {
+    margin-bottom: 10px;
+  }
+  
+  .hero {
+    padding: 40px 15px;
+  }
+  
+  .section {
+    padding: 40px 15px;
+  }
+  
+  h3 {
+    font-size: 1.7em;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  nav ul {
+    gap: 8px;
+  }
+  
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+  
+  .hero {
+    padding: 30px 10px;
+  }
+  
+  .section {
+    padding: 30px 10px;
+  }
+  
+  h3 {
+    font-size: 1.4em;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .card img {
+    max-height: 140px;
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
